@@ -1,0 +1,6 @@
+in\gov\abdm\fhir\controller\DiagnosticReportFhirControllerTest.class
+in\gov\abdm\fhir\controller\PractitionerFhirControllerTest.class
+in\gov\abdm\fhir\controller\PatientFhirControllerTest.class
+in\gov\abdm\fhir\controller\BundleControllerTest.class
+in\gov\abdm\fhir\controller\MedicationRequestFhirControllerTest.class
+in\gov\abdm\fhir\controller\ObservationFhirControllerTest.class

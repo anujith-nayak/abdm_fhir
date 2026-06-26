@@ -1,0 +1,58 @@
+{
+  "patient": {
+    "patientId": "PAT-001",
+    "fullName": "Ravi Kumar",
+    "gender": "male",
+    "dateOfBirth": "1990-05-15",
+    "phoneNumber": "9876543210",
+    "address": "12, MG Road, Bengaluru, Karnataka 560001",
+    "abhaNumber": "91-1234-5678-9012"
+  },
+  "practitioner": {
+    "practitionerId": "PRAC-001",
+    "fullName": "Dr. Ananya Mehta",
+    "specialization": "General Medicine",
+    "department": "Outpatient",
+    "phoneNumber": "9123456780",
+    "email": "ananya.mehta@hospital.example.org"
+  },
+  "observations": [
+    {
+      "observationId": "OBS-001",
+      "patientId": "PAT-001",
+      "observationType": "heart-rate",
+      "observationValue": "72",
+      "unit": "bpm",
+      "recordedDate": "2024-11-01"
+    },
+    {
+      "observationId": "OBS-002",
+      "patientId": "PAT-001",
+      "observationType": "blood-pressure",
+      "observationValue": "120/80",
+      "unit": "mmHg",
+      "recordedDate": "2024-11-01"
+    }
+  ],
+  "medications": [
+    {
+      "prescriptionId": "RX-001",
+      "patientId": "PAT-001",
+      "medicineName": "Paracetamol 500mg",
+      "dosage": "500 mg",
+      "frequency": "twice daily",
+      "duration": "5 days",
+      "instructions": "Take after food"
+    }
+  ],
+  "diagnosticReports": [
+    {
+      "reportId": "RPT-001",
+      "patientId": "PAT-001",
+      "reportName": "Complete Blood Count",
+      "reportStatus": "final",
+      "conclusion": "All parameters within normal range",
+      "reportDate": "2024-11-01"
+    }
+  ]
+}

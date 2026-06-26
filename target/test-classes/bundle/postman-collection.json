@@ -1,0 +1,37 @@
+{
+  "info": {
+    "name": "ABDM FHIR Service - Bundle",
+    "description": "POST /fhir/bundle — converts a complete hospital record into a FHIR R4 Bundle",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Convert Hospital Record to FHIR Bundle",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/fhir+json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"patient\": {\n    \"patientId\": \"PAT-001\",\n    \"fullName\": \"Ravi Kumar\",\n    \"gender\": \"male\",\n    \"dateOfBirth\": \"1990-05-15\",\n    \"phoneNumber\": \"9876543210\",\n    \"address\": \"12, MG Road, Bengaluru, Karnataka 560001\",\n    \"abhaNumber\": \"91-1234-5678-9012\"\n  },\n  \"practitioner\": {\n    \"practitionerId\": \"PRAC-001\",\n    \"fullName\": \"Dr. Ananya Mehta\",\n    \"specialization\": \"General Medicine\",\n    \"department\": \"Outpatient\",\n    \"phoneNumber\": \"9123456780\",\n    \"email\": \"ananya.mehta@hospital.example.org\"\n  },\n  \"observations\": [\n    {\n      \"observationId\": \"OBS-001\",\n      \"patientId\": \"PAT-001\",\n      \"observationType\": \"heart-rate\",\n      \"observationValue\": \"72\",\n      \"unit\": \"bpm\",\n      \"recordedDate\": \"2024-11-01\"\n    }\n  ],\n  \"medications\": [\n    {\n      \"prescriptionId\": \"RX-001\",\n      \"patientId\": \"PAT-001\",\n      \"medicineName\": \"Paracetamol 500mg\",\n      \"dosage\": \"500 mg\",\n      \"frequency\": \"twice daily\",\n      \"duration\": \"5 days\",\n      \"instructions\": \"Take after food\"\n    }\n  ],\n  \"diagnosticReports\": [\n    {\n      \"reportId\": \"RPT-001\",\n      \"patientId\": \"PAT-001\",\n      \"reportName\": \"Complete Blood Count\",\n      \"reportStatus\": \"final\",\n      \"conclusion\": \"All parameters within normal range\",\n      \"reportDate\": \"2024-11-01\"\n    }\n  ]\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/fhir/bundle",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["fhir", "bundle"]
+        }
+      },
+      "response": []
+    }
+  ]
+}
