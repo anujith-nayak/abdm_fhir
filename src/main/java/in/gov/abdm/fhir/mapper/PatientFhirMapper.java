@@ -2,6 +2,7 @@ package in.gov.abdm.fhir.mapper;
 
 import in.gov.abdm.fhir.dto.PatientDTO;
 import in.gov.abdm.fhir.exception.InvalidDateException;
+import in.gov.abdm.fhir.terminology.FhirConstants;
 import org.hl7.fhir.r4.model.Address;
 import org.hl7.fhir.r4.model.ContactPoint;
 import org.hl7.fhir.r4.model.DateType;
@@ -37,10 +38,10 @@ import java.time.format.DateTimeParseException;
 public class PatientFhirMapper {
 
     /** System URI for hospital-assigned patient identifiers. */
-    private static final String HOSPITAL_PATIENT_SYSTEM = "https://hospital.example.org/patients";
+    private static final String HOSPITAL_PATIENT_SYSTEM = FhirConstants.HOSPITAL_PATIENT_SYSTEM;
 
     /** System URI for ABHA (Ayushman Bharat Health Account) identifiers. */
-    private static final String ABHA_SYSTEM = "https://healthid.ndhm.gov.in";
+    private static final String ABHA_SYSTEM = FhirConstants.ABHA_SYSTEM;
 
     /**
      * Converts a validated {@link PatientDTO} into a FHIR R4 {@link Patient} resource.

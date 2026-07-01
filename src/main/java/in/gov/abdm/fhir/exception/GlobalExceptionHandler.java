@@ -1,5 +1,7 @@
 package in.gov.abdm.fhir.exception;
 
+import in.gov.abdm.fhir.ehr.exception.PatientNotFoundException;
+import in.gov.abdm.fhir.ehr.exception.UnsupportedProviderException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -70,6 +72,44 @@ public class GlobalExceptionHandler {
                 .build();
 
         return ResponseEntity.badRequest().body(body);
+    }
+
+    /**
+     * Handles patient-not-found errors raised by the EHR provider layer.
+     *
+     * @param ex the exception thrown by the provider
+     * @return 404 Not Found with the patient ID that was not found
+     */
+    @ExceptionHandler(PatientNotFoundException.class)
+    public ResponseEntity<ErrorResponse> handlePatientNotFoundException(
+            PatientNotFoundException ex) {
+
+        ErrorResponse body = ErrorResponse.builder()
+                .status(HttpStatus.NOT_FOUND.value())
+                .error("Patient Not Found")
+                .message(ex.getMessage())
+                .build();
+
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(body);
+    }
+
+    /**
+     * Handles operations invoked on a provider that has not yet been implemented.
+     *
+     * @param ex the exception thrown by a placeholder provider
+     * @return 501 Not Implemented
+     */
+    @ExceptionHandler(UnsupportedProviderException.class)
+    public ResponseEntity<ErrorResponse> handleUnsupportedProviderException(
+            UnsupportedProviderException ex) {
+
+        ErrorResponse body = ErrorResponse.builder()
+                .status(HttpStatus.NOT_IMPLEMENTED.value())
+                .error("Provider Not Implemented")
+                .message(ex.getMessage())
+                .build();
+
+        return ResponseEntity.status(HttpStatus.NOT_IMPLEMENTED).body(body);
     }
 
     /**

@@ -1,12 +1,12 @@
 package in.gov.abdm.fhir.mapper;
 
 import in.gov.abdm.fhir.dto.PractitionerDTO;
+import in.gov.abdm.fhir.terminology.FhirConstants;
 import org.hl7.fhir.r4.model.CodeableConcept;
 import org.hl7.fhir.r4.model.ContactPoint;
 import org.hl7.fhir.r4.model.HumanName;
 import org.hl7.fhir.r4.model.Identifier;
 import org.hl7.fhir.r4.model.Practitioner;
-import org.hl7.fhir.r4.model.PractitionerRole;
 import org.springframework.stereotype.Component;
 
 /**
@@ -32,7 +32,7 @@ import org.springframework.stereotype.Component;
 public class PractitionerFhirMapper {
 
     /** System URI for hospital-assigned practitioner identifiers. */
-    private static final String HOSPITAL_PRACTITIONER_SYSTEM = "https://hospital.example.org/practitioners";
+    private static final String HOSPITAL_PRACTITIONER_SYSTEM = FhirConstants.HOSPITAL_PRACTITIONER_SYSTEM;
 
     /**
      * Converts a validated {@link PractitionerDTO} into a FHIR R4 {@link Practitioner} resource.
