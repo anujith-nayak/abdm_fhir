@@ -15,10 +15,12 @@ import org.springframework.context.annotation.Configuration;
  * <p>The active {@link EhrDataProvider} is selected by the {@code ehr.provider}
  * property in {@code application.properties}. Valid values:</p>
  * <ul>
- *   <li>{@code dummy}    — {@link in.gov.abdm.fhir.ehr.provider.DummyHmsProvider} (default)</li>
- *   <li>{@code real}     — {@link in.gov.abdm.fhir.ehr.provider.RealHmsProvider}</li>
- *   <li>{@code rest}     — {@link in.gov.abdm.fhir.ehr.provider.RestApiHmsProvider}</li>
- *   <li>{@code database} — {@link in.gov.abdm.fhir.ehr.provider.DatabaseHmsProvider}</li>
+ *   <li>{@code dummy}    — {@link in.gov.abdm.fhir.ehr.provider.DummyHmsProvider} (default)
+ *       reads from the Dummy HMS ({@code abdm_hms}) MySQL database.</li>
+ *   <li>{@code real}     — {@link in.gov.abdm.fhir.ehr.provider.RealHmsProvider}
+ *       stub for future Real HMS integration (not yet implemented).</li>
+ *   <li>{@code database} — {@link in.gov.abdm.fhir.ehr.provider.DatabaseHmsProvider}
+ *       stub for future generic database HMS integration (not yet implemented).</li>
  * </ul>
  *
  * <p>Each provider is conditionally registered via {@code @ConditionalOnProperty}.
@@ -27,7 +29,7 @@ import org.springframework.context.annotation.Configuration;
  *
  * <h2>Design rule</h2>
  * <p>Changing the active provider requires only updating {@code application.properties}.
- * No code changes are necessary.</p>
+ * No changes to the FHIR conversion layer, BundleService, or any mapper are needed.</p>
  */
 @Configuration
 public class EhrConfig {

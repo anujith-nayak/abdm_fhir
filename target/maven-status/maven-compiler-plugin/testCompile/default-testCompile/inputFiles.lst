@@ -4,3 +4,7 @@ C:\code\Projects\internship\fhir\abdm-fhir-service\src\test\java\in\gov\abdm\fhi
 C:\code\Projects\internship\fhir\abdm-fhir-service\src\test\java\in\gov\abdm\fhir\controller\ObservationFhirControllerTest.java
 C:\code\Projects\internship\fhir\abdm-fhir-service\src\test\java\in\gov\abdm\fhir\controller\PatientFhirControllerTest.java
 C:\code\Projects\internship\fhir\abdm-fhir-service\src\test\java\in\gov\abdm\fhir\controller\PractitionerFhirControllerTest.java
+C:\code\Projects\internship\fhir\abdm-fhir-service\src\test\java\in\gov\abdm\fhir\ehr\controller\EhrControllerTest.java
+C:\code\Projects\internship\fhir\abdm-fhir-service\src\test\java\in\gov\abdm\fhir\terminology\DiagnosticReportCodesTest.java
+C:\code\Projects\internship\fhir\abdm-fhir-service\src\test\java\in\gov\abdm\fhir\terminology\MedicationCodesTest.java
+C:\code\Projects\internship\fhir\abdm-fhir-service\src\test\java\in\gov\abdm\fhir\terminology\ObservationCodesTest.java
